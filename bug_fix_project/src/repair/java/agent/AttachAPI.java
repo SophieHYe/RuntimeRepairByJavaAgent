@@ -13,12 +13,20 @@ public class AttachAPI {
 	public static void main(String[] args)
 			throws AttachNotSupportedException, IOException, AgentLoadException, AgentInitializationException {
 		try {
-			String processId = args[0];
-			String agentJarPath = args[1];
-			System.out.println(new File("").getCanonicalPath());
+			String processId;
+			String agentJarPath;
+			if(args.length>0){
+				processId = args[0];
+				agentJarPath = args[1];
+			} else{
+				processId="8208";
+				agentJarPath = "D:\\current_project\\JavaAgent\\RuntimeRepairByJavaAgent\\agent_project\\target\\AgentProject-0.1.jar";
+			}
+			
+			
 			System.out.println("agentJarPath is: "+agentJarPath);
 			VirtualMachine virtualMachine = VirtualMachine.attach(processId);
-			String patchPath =  "../../DividedByZeroPatch.class";
+			String patchPath =  "D:\\current_project\\JavaAgent\\RuntimeRepairByJavaAgent\\DividedByZeroPatch.class";
 			virtualMachine.loadAgent(agentJarPath,patchPath);
 			System.out.println("the patch path is: "+patchPath);
 		} catch (Exception e) {

@@ -27,7 +27,7 @@
 			<artifactId>tools</artifactId>
 			<version>1.8</version>
 			<scope>system</scope>
-			<systemPath>${JAVA_HOME}/lib/tools.jar</systemPath>
+			<systemPath>${project.basedir}/lib/tools.jar</systemPath>
 		</dependency>
 	</dependencies>
 
@@ -72,6 +72,15 @@
   
 	        
 	    </plugins>
+		<resources>
+      <resource>
+        <targetPath>lib/</targetPath>
+        <directory>lib/</directory>
+        <includes>
+          <include>**/tools.jar</include>
+        </includes>
+      </resource>
+    </resources>
 	</build>
 
 

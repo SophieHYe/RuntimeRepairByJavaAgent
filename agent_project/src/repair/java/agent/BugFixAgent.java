@@ -13,7 +13,7 @@ public class BugFixAgent {
 
          System.out.println("Starting the agent main: " + arg);
 
-        Class<?> targetClass = Class.forName("test.java.agent.DividedByZeroDemo");
+        Class<?> targetClass = Class.forName("repair.java.agent.DividedByZero");
 
         //Get current path
         System.out.println(ClassLoader.getSystemResource("") );
