@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Name: JavaAgentTest
+Agent-Class: test.java.agent.BugFixAgent
+Can-Retransform-Classes: true
+Can-Redefine-Classes: true
