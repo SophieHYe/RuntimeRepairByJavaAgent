@@ -15,7 +15,7 @@ import java.lang.management.RuntimeMXBean;
  */
 public class App {
 	
-	public static Integer index = 20;
+	public static Integer index = 10;
 	
 	public static void main(String[] args) {
 		
