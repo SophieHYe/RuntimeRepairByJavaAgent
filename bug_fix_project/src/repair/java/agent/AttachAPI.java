@@ -8,6 +8,11 @@ import com.sun.tools.attach.AgentLoadException;
 import com.sun.tools.attach.AttachNotSupportedException;
 import com.sun.tools.attach.VirtualMachine;
 
+/**
+ * 
+ * @author yehe
+ *
+ */
 public class AttachAPI {
 
 	public static void main(String[] args)
@@ -19,14 +24,14 @@ public class AttachAPI {
 				processId = args[0];
 				agentJarPath = args[1];
 			} else{
-				processId="1892";
+				processId="30272";
 				agentJarPath = "D:\\current_project\\JavaAgent\\RuntimeRepairByJavaAgent\\agent_project\\target\\AgentProject-0.1.jar";
 			}
 			
 			
 			System.out.println("agentJarPath is: "+agentJarPath);
 			VirtualMachine virtualMachine = VirtualMachine.attach(processId);
-			String patchPath =  "D:\\current_project\\JavaAgent\\RuntimeRepairByJavaAgent\\bug_fix_project\\target\\classes\\repair\\java\\agent\\DividedByZero.class";
+			String patchPath =  "D:\\current_project\\JavaAgent\\RuntimeRepairByJavaAgent\\DividedByZero.class";
 			virtualMachine.loadAgent(agentJarPath,patchPath);
 			System.out.println("the patch path is: "+patchPath);
 		} catch (Exception e) {
